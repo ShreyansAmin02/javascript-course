@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6c</title>
+</head>
+
+<body>
+  <h1>6c</h1>
+  <script>
+    let name = 'Shreyans';
+    let currentTime = new Date();
+    let time = currentTime.getHours();
+    if (time < 12 && time > 6) {
+      console.log(`Good morning, ${name}!`);
+    } else if (time >= 13 && time < 17) {
+      console.log(`Good afternoon , ${name}!`);
+    } else {
+      console.log(`Good evening, ${name}!`);
+    }
+    console.log(`The time is: ${time}`);
+  </script>
+</body>
+
+</html>

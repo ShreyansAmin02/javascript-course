@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans in JavaScript</title>
+</head>
+
+<body>
+  <h1>Learning Booleans in JavaScript</h1>
+  <p>This page is dedicated to understanding booleans in JavaScript.</p>
+
+  <script>
+    /* Booleans are a data type in JavaScript that represent one of two values: true or false. */
+    /*
+    true
+    false
+    console.log(3 > 5 - 5);
+
+    console.log(5 == '5.00');
+
+    if (false) {
+      console.log('Hello world!');
+    }
+
+    else {
+      console.log('Goodbye world!');
+    }
+
+    const age = 15;
+
+    if (age >= 16) {
+      console.log('You are old enough to drive!');
+      console.log('Congrats!');
+    }
+    else if (age >= 14) {
+      console.log('Almost there!');
+    }
+    else {
+      console.log('You are not old enough to drive!');
+    }
+      */
+
+    /*
+    console.log(true && true);
+    console.log(true || false);
+    console.log(!true);
+    */
+    /*
+        if (0) {
+          console.log('Truthy');
+        }
+    
+        const cartQuantity = 5;
+    
+        if (cartQuantity) {
+          console.log('You have items in your cart!');
+        }
+        else {
+          console.log('Your cart is empty!');
+        }
+        */
+
+    const result = true ? 'truthy' : 'falsy';
+    console.log(result);
+
+    false && console.log('Hello world!');
+
+    const message = 5 && 'Hello world!';
+    console.log(message);
+
+    const currency = undefined || 'USD';
+    console.log(currency);
+
+  </script>
+</body>
+
+</html>
