@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7d</title>
+</head>
+
+<body>
+  <h1>7d</h1>
+  <script>
+    function convertToCelcisus(fahrenheit) {
+      return (fahrenheit - 32) * 5 / 9;
+    }
+
+    function convertToFahrenheit(celsius) {
+      return celsius * 9 / 5 + 32;
+    }
+
+    function convertTemprreture(temp, units) {
+      if (units === 'C') {
+        return convertToFahrenheit(temp);
+      }
+      else if (units === 'F') {
+        return convertToCelcisus(temp);
+      }
+      else {
+        return 'Error: Invalid unit';
+      }
+    }
+    console.log(convertTemprreture(25, 'C'));
+  </script>
+</body>
+
+</html>
