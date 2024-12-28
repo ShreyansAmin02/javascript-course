@@ -10,6 +10,7 @@
 <body>
   <h1>08-Objects</h1>
   <script>
+    /*
     const product = {
       name: 'Gummy Bears',
       price: 1.99,
@@ -27,6 +28,32 @@
 
     delete product.inStock;
     console.log(product);
+    */
+
+    const product2 = {
+      name: 'shirt',
+      'delivery-time': '2 days',
+      rating: {
+        stars: 4.5, // nested object
+        count: 87, // number of ratings given
+      },
+      fun: function () {
+        console.log('function inside object');
+      }
+    }
+
+    console.log(product2);
+    console.log(product2.name); // dot notation
+    console.log(product2['name']); // bracket notation
+    console.log(product2['delivery-time']);
+    console.log(product2.rating.stars);
+
+    product2.fun();
+
+    console.log(JSON.stringify(product2)); // convert object to string
+    const jsonstring = JSON.stringify(product2);
+    console.log(JSON.parse(jsonstring)); // convert string to object
+
   </script>
 </body>
 

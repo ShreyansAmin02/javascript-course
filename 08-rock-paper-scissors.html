@@ -14,13 +14,27 @@
   <button onclick="playGame('Rock');">Rock</button>
   <button onclick="playGame('Paper');">Paper</button>
   <button onclick="playGame('Scissors');">Scissors</button>
+  <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('Score');
+    alert('Score has been reset!');
+  ">Reset Score</button>
 
   <script>
-    let score = 0; // Initialize the score
+    // Object to store the score
+    let score = JSON.parse(localStorage.getItem('Score')) || {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    }
+      ; // Get the score from local storage
+    console.log(localStorage.getItem('Score'));
+
     // Function to play the game
     function playGame(playerMove) {
       const computerMove = pickComputerMove(); // Get computer's move
-      let result = '';
 
       // Determine the result based on player's move and computer's move
       if (playerMove == "Scissors") {
@@ -31,7 +45,8 @@
         } else {
           result = 'Tie!';
         }
-      } else if (playerMove == "Paper") {
+      }
+      else if (playerMove == "Paper") {
         if (computerMove === 'Rock') {
           result = 'You win!';
         } else if (computerMove === 'Paper') {
@@ -39,7 +54,8 @@
         } else {
           result = 'You lose!';
         }
-      } else {
+      }
+      else if (playerMove == "Rock") {
         if (computerMove === 'Rock') {
           result = 'Tie!';
         } else if (computerMove === 'Paper') {
@@ -49,9 +65,23 @@
         }
       }
 
+      // Update the score
+      if (result === 'You win!') {
+        score.wins++;
+      } else if (result === 'You lose!') {
+        score.losses++;
+      } else {
+        score.ties++;
+      }
+
+      localStorage.setItem('Score', JSON.stringify(score)); // Save the score to local storage
+
+
       // Display the result
-      alert(`You picked ${playerMove}. The computer picked ${computerMove}. ${result}`);
+      alert(`You picked ${playerMove}. The computer picked ${computerMove}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     }
+
 
     // Function to randomly pick the computer's move
     function pickComputerMove() {
