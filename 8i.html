@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+  <button onclick="
+    playGame('heads');
+  ">heads</button>
+  <button onclick="
+    playGame('tails');
+  ">tails</button>
+  <button onclick="
+    score.correct = 0;
+    score.incorrect = 0;
+    localStorage.removeItem('Score');
+    console.log(' Score has been reset!');
+    alert('Score has been reset!'); 
+  ">Reset Score</button>
+  <script>
+    let result = '';
+    let score = JSON.parse(localStorage.getItem('Score')) || {
+      correct: 0,
+      incorrect: 0
+    }
+    console.log(score);
+    function playGame(guess) {
+      let computerMove = move();
+      if (guess === computerMove) {
+        result = 'You win!';
+        score.correct++;
+      } else {
+        result = 'You lose!';
+        score.incorrect++;
+      }
+      alert(`You guessed ${guess}, computer guessed ${computerMove}. ${result}
+Correct: ${score.correct}, Incorrect: ${score.incorrect}`);
+      localStorage.setItem('Score', JSON.stringify(score));
+      console.log(localStorage.getItem('Score'));
+    }
+
+    function move() {
+      let randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+      return result;
+    }
+  </script>
+</body>
+
+</html>

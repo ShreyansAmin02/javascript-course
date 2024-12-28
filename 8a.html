@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8a</title>
+</head>
+
+<body>
+  <h1>8a</h1>
+  <p>In this exercise, we are practicing creating and using objects in JavaScript. Below, we have defined an object
+    named
+    `product1` with properties `name` and `price`. Open the console to see the object logged.</p>
+
+  <script>
+
+    const product1 = {
+      name: 'basketball',
+      price: 2095,
+    }
+
+    console.log(product1);
+
+    product1.price = product1.price + 500;
+    console.log(product1);
+    product1['delivery-time'] = '3 days';
+    console.log(product1);
+
+    const shirt = {
+      name: 'shirt',
+      price: 1995,
+    }
+
+    const socks = {
+      name: 'socks',
+      price: 595,
+    }
+
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price) {
+        return product1;
+      } else {
+        return product2;
+      }
+    }
+
+    const product3 = {
+      name: 'basketball',
+      price: 2095
+    };
+
+    const product4 = {
+      name: 'socks',
+      price: 1090
+    };
+
+    console.log(comparePrice(product3, product4));
+
+    function isSameProduct(product1, product2) {
+      if (product1.name === product2.name && product1.price === product2.price) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    const product5 = {
+      name: 'basketball',
+      price: 2095
+    };
+
+    const product6 = {
+      name: 'basketball',
+      price: 2095
+    };
+
+    console.log(isSameProduct(product5, product6));
+  </script>
+</body>
+
+</html>
