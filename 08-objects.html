@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08-Objects</title>
+</head>
+
+<body>
+  <h1>08-Objects</h1>
+  <script>
+    const product = {
+      name: 'Gummy Bears',
+      price: 1.99,
+    };
+
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'cotton socks';
+    console.log(product);
+
+    product.inStock = true;
+    console.log(product);
+
+    delete product.inStock;
+    console.log(product);
+  </script>
+</body>
+
+</html>
