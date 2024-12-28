@@ -30,6 +30,8 @@
     console.log(product);
     */
 
+    /*
+
     const product2 = {
       name: 'shirt',
       'delivery-time': '2 days',
@@ -53,6 +55,53 @@
     console.log(JSON.stringify(product2)); // convert object to string
     const jsonstring = JSON.stringify(product2);
     console.log(JSON.parse(jsonstring)); // convert string to object
+
+    */
+
+    console.log('Hello'.length);
+    console.log('Hello'.toUpperCase());
+
+    const object1 = {
+      message: 'hello'
+    };
+
+    const object2 = object1;
+
+    object1.message = 'Good job!';
+    console.log(object1.message);
+
+    const object3 = {
+      message: 'Good job!'
+    };
+
+    console.log(object3 === object1); // false
+
+    console.log(object2 === object1); // true
+
+    const object4 = {
+      message: 'Good job!',
+      price: 799
+    };
+
+    // const message = object4.message;
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+      // message: message,
+      message, // take value from message variable, same as above
+      price, // take value from price variable
+      // method: function function1() {
+      //  console.log('method');
+      //}, 
+      method() { // same as above, short hand method
+        console.log('method');
+      }
+    }
+
+    console.log(object5);
+    object5.method();
 
   </script>
 </body>
