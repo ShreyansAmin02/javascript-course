@@ -4,12 +4,17 @@
 <head></head>
 
 <body>
+  <!-- Button to play the game with 'heads' as the guess -->
   <button onclick="
     playGame('heads');
   ">heads</button>
+  
+  <!-- Button to play the game with 'tails' as the guess -->
   <button onclick="
     playGame('tails');
   ">tails</button>
+  
+  <!-- Button to reset the score -->
   <button onclick="
     score.correct = 0;
     score.incorrect = 0;
@@ -17,15 +22,24 @@
     console.log(' Score has been reset!');
     alert('Score has been reset!'); 
   ">Reset Score</button>
+  
   <script>
+    // Initialize result variable
     let result = '';
+    
+    // Retrieve score from localStorage or initialize it if not present
     let score = JSON.parse(localStorage.getItem('Score')) || {
       correct: 0,
       incorrect: 0
     }
     console.log(score);
+    
+    // Function to play the game
     function playGame(guess) {
+      // Get computer's move
       let computerMove = move();
+      
+      // Check if the guess matches the computer's move
       if (guess === computerMove) {
         result = 'You win!';
         score.correct++;
@@ -33,12 +47,17 @@
         result = 'You lose!';
         score.incorrect++;
       }
+      
+      // Display the result and update the score
       alert(`You guessed ${guess}, computer guessed ${computerMove}. ${result}
 Correct: ${score.correct}, Incorrect: ${score.incorrect}`);
+      
+      // Save the updated score to localStorage
       localStorage.setItem('Score', JSON.stringify(score));
       console.log(localStorage.getItem('Score'));
     }
 
+    // Function to generate a random move (heads or tails)
     function move() {
       let randomNumber = Math.random();
       if (randomNumber < 0.5) {
