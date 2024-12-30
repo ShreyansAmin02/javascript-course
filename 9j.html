@@ -99,7 +99,7 @@
     function equalsBTN(cacluation) {
       evaluation = eval(calculation);
       updateCalc(evaluation);
-      calculation = '';
+      calculation = evaluation;
       localStorage.removeItem('calculation');
       if (evaluation == undefined) {
         updateCalc('0');
