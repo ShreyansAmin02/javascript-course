@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10a</title>
+  <style>
+    /* Add your CSS here */
+    button {
+      border-radius: 5px;
+      border: none;
+      padding: 10px 15px;
+    }
+
+    .add-to-cart {
+      background-color: rgb(255, 216, 20);
+      border-radius: 20px;
+    }
+
+    .request-now {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      font-weight: bold;
+    }
+
+    .later {
+      background-color: rgb(230, 230, 230);
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>10a</h1>
+  <button class="add-to-cart">Add to cart</button>
+  <p>
+    <button class="request-now">Request now</button>
+    <button class="later">Schedule for later</button>
+    <button class="button js-button">Test</button>
+  </p>
+  <script>
+
+    let test = document.querySelector('.button');
+    console.log(test.classList.contains('js-button'));
+  </script>
+</body>
+
+</html>

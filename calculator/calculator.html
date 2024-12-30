@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles/calculator.css">
+</head>
+
+<body>
+  <header>
+    <h1>Calculator Final Version</h1>
+  </header>
+  <main>
+    <p class="js-calc">0</p>
+    <p>
+      <button class="btn btn-1" onclick="
+      calc('1');
+      ">1</button>
+      <button class="btn btn-1" onclick="
+      calc('2');
+      ">2</button>
+      <button class="btn btn-1" onclick="
+      calc('3');
+      ">3</button>
+      <button class="btn btn-2" onclick="
+      calc(' + ');
+      ">+</button>
+
+    </p>
+    <p>
+      <button class="btn btn-1" onclick="
+      calc('4');
+      ">4</button>
+      <button class="btn btn-1" onclick="
+      calc('5');
+      ">5</button>
+      <button class="btn btn-1" onclick="
+      calc('6');
+      ">6</button>
+
+      <button class="btn btn-2" onclick="
+      calc(' - ');
+      ">-</button>
+    </p>
+    <p>
+      <button class="btn btn-1" onclick="
+      calc('7');
+      ">7</button>
+      <button class="btn btn-1" onclick="
+      calc('8');
+      ">8</button>
+      <button class="btn btn-1" onclick="
+      calc('9');
+      ">9</button>
+      <button class="btn btn-2" onclick="
+      calc(' * ');
+      ">*</button>
+    </p>
+    <p>
+      <button class="btn btn-1" onclick="
+      calc('0');
+      ">0</button>
+      <button class="btn btn-1" onclick="
+      calc('.');
+      ">.</button>
+
+      <button class="btn btn-1" onclick="
+        equalsBTN(calculation);
+      ">=</button>
+
+      <button class="btn btn-2" onclick="
+      calc(' / ');
+      ">/</button>
+    </p>
+    <p>
+      <button class="btn btn-1 clear" onclick="
+      calculation = ' ';
+      updateCalc('0');
+      console.log('Cleared');
+      ">Clear</button>
+    </p>
+  </main>
+
+  <script src="scripts/calculator.js">
+    
+
+  </script>
+</body>
+
+</html>
