@@ -17,13 +17,16 @@
   <p>Amazon Shopping Calculator</p>
   <p>Orders under $40 = +$10 Shipping</p>
   <p>Orders over $40 = FREE Shipping</p>
-  <input class="js-cost-input" placeholder="Cost of Order">
+  <input class="js-cost-input" placeholder="Cost of Order" onkeydown="
+    handleKeyDown(event);
+    ">
   <button onclick="
     calculateTotal();
   ">Calcualte</button>
   <p class="js-total-price"></p>
 
   <script>
+
     function subscribe() {
       const subButton = document.getElementById('subscribe');
       if (subButton.innerHTML === 'Subscribed') {
@@ -38,18 +41,28 @@
       }
     }
 
+    function handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
     function calculateTotal() {
       const input = document.querySelector('.js-cost-input');
       let total = document.querySelector('.js-total-price');
       let cost = Number(input.value);
+
+      if (isNaN(cost)) {
+        total.innerHTML = 'Please enter a valid number';
+        return;
+      }
+
       if (cost < 40) {
         cost = cost + 10;
         total.innerHTML = `Total Cost: $${cost}`;
-      }
-      else {
+      } else {
         total.innerHTML = `Total Cost: $${cost}`;
       }
-
     }
 
   </script>
