@@ -10,8 +10,37 @@
 <body>
   <h1>09-Document Object Model</h1>
   <p>This document is to learn DOM.</p>
+
+  <button>Hello</button>
+  <button class="js-button">Second Button</button>
+
   <script>
     // Your JavaScript code will go here
+    /*
+    document.body.innerHTML = 'hello';
+    document.title = 'Hello';
+    */
+
+    /*
+    console.log(document.title);
+    document.title = 'Changed';
+
+    console.log(document.body);
+    console.log(typeof document.body);
+    console.log(document.body.innerHTML);
+    document.body.innerHTML = '<button>Good Job!</button>';
+    */
+
+    console.log(document.querySelector('button'));
+
+    document.querySelector('button')
+      .innerHTML = 'Changed';
+
+    const buttonElement = document.querySelector('.js-button');
+
+    console.log(buttonElement);
+
+
   </script>
 </body>
 

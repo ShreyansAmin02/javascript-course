@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09-Document Object Model</title>
+</head>
+
+<body>
+  <h1>09-DOM Projects</h1>
+  <p>YouTube Subscribe Button</p>
+  <button id="subscribe" style="background-color: red; color: white;" onclick="
+    subscribe();
+  ">Subscribe</button>
+
+  <p>Amazon Shopping Calculator</p>
+  <p>Orders under $40 = +$10 Shipping</p>
+  <p>Orders over $40 = FREE Shipping</p>
+  <input class="js-cost-input" placeholder="Cost of Order">
+  <button onclick="
+    calculateTotal();
+  ">Calcualte</button>
+  <p class="js-total-price"></p>
+
+  <script>
+    function subscribe() {
+      const subButton = document.getElementById('subscribe');
+      if (subButton.innerHTML === 'Subscribed') {
+        subButton.innerHTML = 'Subscribe';
+        subButton.style.backgroundColor = 'red';
+        subButton.style.color = 'white';
+      }
+      else {
+        subButton.innerHTML = 'Subscribed';
+        subButton.style.backgroundColor = '';
+        subButton.style.color = '';
+      }
+    }
+
+    function calculateTotal() {
+      const input = document.querySelector('.js-cost-input');
+      let total = document.querySelector('.js-total-price');
+      let cost = input.value;
+      if (cost < 40) {
+        cost = parseInt(cost) + 10;
+        total.innerHTML = `Total Cost: $${cost}`;
+      }
+      else {
+        cost = parseInt(cost);
+        total.innerHTML = `Total Cost: $${cost}`;
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>
