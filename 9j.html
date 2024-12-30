@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <header>
+    <h1>Calculator DOMS Version</h1>
+  </header>
+  <main>
+    <p class="js-calc">Enter Calcualtion</p>
+    <p>
+      <button onclick="
+      calc('1');
+      ">1</button>
+      <button onclick="
+      calc('2');
+      ">2</button>
+      <button onclick="
+      calc('3');
+      ">3</button>
+      <button onclick="
+      calc(' + ');
+      ">+</button>
+
+    </p>
+    <p>
+      <button onclick="
+      calc('4');
+      ">4</button>
+      <button onclick="
+      calc('5');
+      ">5</button>
+      <button onclick="
+      calc('6');
+      ">6</button>
+
+      <button onclick="
+      calc(' - ');
+      ">-</button>
+    </p>
+    <p>
+      <button onclick="
+      calc('7');
+      ">7</button>
+      <button onclick="
+      calc('8');
+      ">8</button>
+      <button onclick="
+      calc('9');
+      ">9</button>
+      <button onclick="
+      calc(' * ');
+      ">*</button>
+    </p>
+    <p>
+      <button onclick="
+      calc('0');
+      ">0</button>
+      <button onclick="
+      calc('.');
+      ">.</button>
+
+      <button onclick="
+      evaluation = eval(calculation);
+      updateCalc(evaluation);
+      calculation = '';
+      console.log(evaluation);
+      localStorage.removeItem('calculation');
+      ">=</button>
+
+      <button onclick="
+      calc(' / ');
+      ">/</button>
+    </p>
+    <p>
+      <button onclick="
+      calculation = '';
+      updateCalc('Enter Calcualtion');
+      console.log('Cleared');
+      ">Clear</button>
+    </p>
+  </main>
+
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+    updateCalc(calculation) || updateCalc('Enter Calculation');
+    function calc(input) {
+      calculation += input;
+      console.log(calculation);
+      updateCalc(calculation);
+      localStorage.setItem('calculation', calculation);
+    }
+
+    function updateCalc(calculation) {
+      document.querySelector('.js-calc').innerHTML = String(calculation);
+
+    }
+
+  </script>
+</body>
+
+</html>
