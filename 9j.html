@@ -12,7 +12,7 @@
     <h1>Calculator DOMS Version</h1>
   </header>
   <main>
-    <p class="js-calc">Enter Calcualtion</p>
+    <p class="js-calc">0</p>
     <p>
       <button onclick="
       calc('1');
@@ -66,11 +66,7 @@
       ">.</button>
 
       <button onclick="
-      evaluation = eval(calculation);
-      updateCalc(evaluation);
-      calculation = '';
-      console.log(evaluation);
-      localStorage.removeItem('calculation');
+        equalsBTN(calculation);
       ">=</button>
 
       <button onclick="
@@ -79,8 +75,8 @@
     </p>
     <p>
       <button onclick="
-      calculation = '';
-      updateCalc('Enter Calcualtion');
+      calculation = ' ';
+      updateCalc('0');
       console.log('Cleared');
       ">Clear</button>
     </p>
@@ -88,7 +84,7 @@
 
   <script>
     let calculation = localStorage.getItem('calculation') || '';
-    updateCalc(calculation) || updateCalc('Enter Calculation');
+    updateCalc(calculation) || updateCalc('0');
     function calc(input) {
       calculation += input;
       console.log(calculation);
@@ -98,7 +94,16 @@
 
     function updateCalc(calculation) {
       document.querySelector('.js-calc').innerHTML = String(calculation);
+    }
 
+    function equalsBTN(cacluation) {
+      evaluation = eval(calculation);
+      updateCalc(evaluation);
+      calculation = '';
+      localStorage.removeItem('calculation');
+      if (evaluation == undefined) {
+        updateCalc('0');
+      }
     }
 
   </script>
