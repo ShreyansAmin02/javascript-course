@@ -41,13 +41,12 @@
     function calculateTotal() {
       const input = document.querySelector('.js-cost-input');
       let total = document.querySelector('.js-total-price');
-      let cost = input.value;
+      let cost = Number(input.value);
       if (cost < 40) {
-        cost = parseInt(cost) + 10;
+        cost = cost + 10;
         total.innerHTML = `Total Cost: $${cost}`;
       }
       else {
-        cost = parseInt(cost);
         total.innerHTML = `Total Cost: $${cost}`;
       }
 
