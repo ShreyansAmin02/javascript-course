@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11a</title>
+</head>
+
+<body>
+  <h1>11a</h1>
+  <script>
+    const nums = [10, 20, 30];
+    console.log(nums);
+
+
+    function getLastArray(array) {
+      const i = array.length - 1;
+      const value = array[i];
+      console.log(value);
+    }
+
+    getLastArray(nums);
+
+    function arraySwap(array) {
+      const firtValue = array[0];
+      const i = array.length - 1;
+      const lastValue = array[i];
+      array[0] = lastValue;
+      array[i] = firtValue;
+      console.log(array);
+    }
+
+    arraySwap(nums);
+
+  </script>
+</body>
+
+</html>

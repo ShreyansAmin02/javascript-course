@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11l</title>
+</head>
+
+<body>
+  <h1>11l</h1>
+  <script>
+    function minMax(nums) {
+      const result = {
+        min: null,
+        max: null
+      };
+      for (i = 0; i < nums.length; i++) {
+        const value = nums[i];
+        if (result.max === null || value > result.max) {
+          result.max = value;
+        }
+        if (result.min === null || value < result.min) {
+          result.min = value;
+        }
+      }
+      console.log(result);
+    }
+
+    minMax([3]);
+  </script>
+</body>
+
+</html>

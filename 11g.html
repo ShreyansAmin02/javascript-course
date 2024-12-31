@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11g</title>
+</head>
+
+<body>
+  <h1>11g</h1>
+  <script>
+    const array1 = [1, 2, 3];
+    function addOne(array) {
+      let array2 = [];
+      for (i = 0; i < array.length; i++) {
+        const value = array[i];
+        array2.push(value + 1);
+      }
+      return array2;
+    }
+    console.log(array1);
+    console.log(addOne([-2, -1, 0, 99]));
+
+    function addNum(array, num) {
+      let array2 = [];
+      for (i = 0; i < array.length; i++) {
+        const value = array[i];
+        array2.push(value + num);
+      }
+      return array2;
+    }
+
+    console.log(addNum(array1, 2));
+
+  </script>
+</body>
+
+</html>
