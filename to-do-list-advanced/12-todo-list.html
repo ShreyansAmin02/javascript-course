@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 Todo List</title>
+  <link rel="stylesheet" href="styles/12-todo-list.css">
+</head>
+
+<body>
+  <h1>11 Todo List</h1>
+  <p>This is a simple todo list application to help you manage your tasks efficiently.</p>
+
+  <div class="todo-input-grid">
+    <input type="text" class="js-task js-input" placeholder="Enter a task">
+    <input type="date" class="js-date js-input" placeholder="Enter a date">
+    <button onclick="
+      addTodo();
+    " id="add">Add</button>
+
+    <button onclick="
+      clearList();
+    " class="js-clear-btn">Clear</button>
+  </div>
+  <h2>List:</h2>
+  <div class="js-todo-list todo-grid"></div>
+
+  <script src="scripts/12-todo-list.js"></script>
+</body>
+
+</html>
