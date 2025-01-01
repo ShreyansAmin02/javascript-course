@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11q</title>
+</head>
+
+<body>
+  <h1>11q</h1>
+  <p>
+    Create a function findIndex(array, word) that searches an array for a string (in the 'word' paramater) and returns
+    the index of the first appearance of the string. If it doesn't exist, return -1.
+  </p>
+  <script>
+    function searchArray(array, word) {
+      let found = false;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          console.log(i);
+          found = true;
+          return;
+        }
+      }
+      if (!found) {
+        console.log(-1);
+      }
+    }
+
+    searchArray(['hello', 'world', 'array'], 'world');
+    searchArray(['search', 'hello', 'search', 'world'], 'hello');
+
+    searchArray(['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli fruit', 'vanilla', 'watermelon', 'xigua', 'yellow passion fruit', 'zucchini'], 'kiwi');
+    searchArray(['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'papaya', 'quince', 'raspberry', 'strawberry', 'tangerine', 'ugli fruit', 'vanilla', 'watermelon', 'xigua', 'yellow passion fruit', 'zucchini'], 'blueberry');
+  </script>
+</body>
+
+</html>

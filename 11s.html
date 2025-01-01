@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11s</title>
+</head>
+
+<body>
+  <h1>11s</h1>
+  <p>
+    Update so that only the first 2 eggs are removed from the array.
+  </p>
+  <script>
+    function removeEgg(foods) {
+      let newFoods = [];
+      let occurance = 0;
+      for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg') {
+          if (occurance >= 2) {
+            newFoods.push(foods[i]);
+          }
+          occurance++;
+          continue;
+        }
+        newFoods.push(foods[i]);
+      }
+      console.log(newFoods);
+    }
+
+    // Example 1
+    removeEgg(['egg', 'bacon', 'sausage', 'egg', 'toast']);
+    // Example 2
+    removeEgg(['egg', 'egg', 'egg', 'egg']);
+    // Example 3
+    removeEgg(['pancake', 'waffle', 'egg', 'juice']);
+  </script>
+</body>
+
+</html>

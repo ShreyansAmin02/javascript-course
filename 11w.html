@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11v</title>
+</head>
+
+<body>
+  <h1>11v</h1>
+  <p>
+    Create a copy of exercise 11q, where we created findIndex(). Below it,
+    create a function unique(array) that takes an array of strings and
+    returns an array where each string only appears once (there are
+    no duplicates). Try to use the findIndex() function in your solution.
+  </p>
+  <script>
+    function findIndex(array, word) {
+      let found = false;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          console.log(i);
+          found = true;
+          return;
+        }
+      }
+      if (!found) {
+        console.log(-1);
+      }
+    }
+
+    function unique(array) {
+      let newArray = [];
+      for (let i = 0; i < array.length; i++) {
+        if (findIndex(newArray, array[i]) === -1) {
+          newArray.push(array[i]);
+        }
+      }
+      console.log(newArray);
+    }
+
+  </script>
+</body>
+
+</html>

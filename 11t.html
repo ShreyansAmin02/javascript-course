@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11t</title>
+</head>
+
+<body>
+  <h1>11t</h1>
+  <p>
+    Update so that only the last 2 eggs are removed from the array.
+  </p>
+  <script>
+    function removeEgg(foods) {
+      let foods2 = foods.slice();
+      foods2 = foods2.reverse();
+      let newFoods = [];
+      let occurance = 0;
+      for (let i = 0; i < foods2.length; i++) {
+        if (foods[i] === 'egg') {
+          if (occurance >= 2) {
+            newFoods.push(foods[i]);
+          }
+          occurance++;
+          continue;
+        }
+        newFoods.push(foods2[i]);
+      }
+      console.log(`New aray: ${newFoods}`);
+      console.log(`First aray: ${foods}`);
+      console.log(`Second aray: ${foods2}`);
+    }
+    // Example 1
+    let foods1 = ['egg', 'bacon', 'sausage', 'egg', 'egg'];
+    removeEgg(foods1); // Output: ['egg', 'bacon', 'sausage']
+
+    // Example 2
+    let foods2 = ['egg', 'egg', 'egg', 'egg', 'egg'];
+    removeEgg(foods2); // Output: ['egg', 'egg', 'egg']
+
+    // Example 3
+    let foods3 = ['bacon', 'egg', 'sausage', 'egg', 'egg', 'egg', 'toast'];
+    removeEgg(foods3); // Output: ['bacon', 'egg', 'sausage', 'egg', 'toast']
+  </script>
+</body>
+
+</html>

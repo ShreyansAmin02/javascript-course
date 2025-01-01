@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11o</title>
+</head>
+
+<body>
+  <h1>11o</h1>
+  <p>Create an array of strings, loop over the array, and check if the string 'search' is inside the array. If it is,
+    console.log() the index of 'search' in the array. If not, console.log '-1'.</p>
+  <script>
+
+    function searchArray(array) {
+      let found = false;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === 'search') {
+          console.log(i);
+          found = true;
+          return;
+        }
+      }
+      if (!found) {
+        console.log(-1);
+      }
+    }
+
+    const myArray = ['hello', 'world', 'search', 'array'];
+    searchArray(myArray);
+    searchArray(['hello', 'world', 'array']);
+    searchArray(['search', 'hello', 'search', 'world']);
+
+  </script>
+</body>
+
+</html>
