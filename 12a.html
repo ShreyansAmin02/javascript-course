@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12a</title>
+</head>
+
+<body>
+  <h1>12a</h1>
+  <p>Create a variable called 'add' and save a function inside. This function will console.log(2+3); Run the function
+    twice.</p>
+  <script>
+    const add = function () {
+      console.log(2 + 3);
+    }
+    add();
+    add();
+
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function () { console.log('12b') });
+  </script>
+</body>
+
+</html>

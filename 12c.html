@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12c</title>
+</head>
+
+<body>
+  <h1>12c</h1>
+  <p>Create the button below. When clicking the button, after 1 second,
+    the text inside the button changes to 'Finished!'.
+    (Hint: use setTimeout() and the DOM).</p>
+
+  <button class="click" onclick="
+    changeText();
+  ">Click me</button>
+
+  <button class="add-to-cart" onclick=" 
+    addToCart();
+  ">Add to cart</button>
+  <p class="text"></p>
+  <script>
+    function changeText() {
+      setTimeout(function () {
+        document.querySelector('.click').innerText = 'You shouldn\'t have clicked me';
+        setTimeout(function () {
+          window.location.href = 'https://i.pinimg.com/736x/04/bd/e6/04bde61b47d7922ed605f3d1c7dd8000.jpg';
+        }, 2000)
+
+      }, 5000);
+      document.querySelector('.click').innerText = 'Loading...';
+    }
+
+    let timerID;
+    function addToCart() {
+      clearTimeout(timerID);
+      timerID = setTimeout(function () {
+        text.innerText = '';
+      }, 2000);
+      const text = document.querySelector('.text');
+      text.innerText = 'Item added to cart';
+
+    }
+  </script>
+</body>
+
+</html>
