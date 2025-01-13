@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12l</title>
+</head>
+
+<body>
+  <h1>12l</h1>
+  <p>Create a function countPositive(nums) that takes an array of numbers and returns how many numbers in the array are
+    greater than 0. Create this fucntion using .forEach() instead of a loop</p>
+  <ul>
+    <li>countPositive([1,-3,5]) => 2</li>
+    <li>countPositive([-2, 3, -5, 7, 10]) => 3</li>
+  </ul>
+  <script>
+    function countPositive(array) {
+      let positives = 0;
+      array.forEach((num) => {
+        if (num >= 0) {
+          positives++;
+        }
+      });
+      return positives;
+    }
+
+    console.log(countPositive([1, -3, 5]));
+    console.log(countPositive([-2, 3, -5, 7, 10]));
+  </script>
+</body>
+
+</html>

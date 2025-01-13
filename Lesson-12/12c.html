@@ -13,20 +13,21 @@
     the text inside the button changes to 'Finished!'.
     (Hint: use setTimeout() and the DOM).</p>
 
-  <button class="click" onclick="
-    changeText();
-  ">Click me</button>
+  <button class="click">Click me</button>
 
   <button class="add-to-cart" onclick=" 
     addToCart();
   ">Add to cart</button>
   <p class="text"></p>
   <script>
+    document.querySelector('.click').addEventListener('click', () => {
+      changeText();
+    })
     function changeText() {
-      setTimeout(function () {
+      setTimeout(() => {
         document.querySelector('.click').innerText = 'You shouldn\'t have clicked me';
-        setTimeout(function () {
-          window.location.href = 'https://i.pinimg.com/736x/04/bd/e6/04bde61b47d7922ed605f3d1c7dd8000.jpg';
+        setTimeout(() => {
+          window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
         }, 2000)
 
       }, 5000);
@@ -36,7 +37,7 @@
     let timerID;
     function addToCart() {
       clearTimeout(timerID);
-      timerID = setTimeout(function () {
+      timerID = setTimeout(() => {
         text.innerText = '';
       }, 2000);
       const text = document.querySelector('.text');

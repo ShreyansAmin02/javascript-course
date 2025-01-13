@@ -24,7 +24,7 @@ body {
   padding: 6px;
 }
 
-#add {
+.js-add-todo-button {
   background-color: green;
   color: white;
   border: none;

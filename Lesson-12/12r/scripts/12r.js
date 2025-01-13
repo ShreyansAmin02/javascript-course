@@ -144,6 +144,10 @@ document.querySelector('.auto-play-btn').addEventListener('click', () => {
   autoPlay();
 });
 
+document.querySelector('.reset-btn').addEventListener('click', () => {
+  confirm();
+})
+
 document.body.addEventListener('keydown', (event) => {
   if (event.key === 'r' && !event.ctrlKey) {
     playGame('Rock');
@@ -154,10 +158,32 @@ document.body.addEventListener('keydown', (event) => {
   else if (event.key === 's') {
     playGame('Scissors');
   }
-  else if (event.key === 'Enter') {
+  else if (event.key === 'a') {
     autoPlay();
   }
-  else if (event.key === 'Escape') {
-    resetScore();
+  else if (event.key === 'Backspace') {
+    confirm();
   };
 });
+
+function confirm() {
+  document.querySelector('.js-confirm')
+    .innerHTML = `
+    Are you sure you want to reset the score?
+    <button class="yes">Yes</button>
+    <button class="no">No</button>
+  `;
+  document.querySelector('.yes').addEventListener('click', () => {
+    resetScore();
+    hideConfirm();
+  });
+
+  document.querySelector('.no').addEventListener('click', () => {
+    hideConfirm();
+  });
+}
+
+function hideConfirm() {
+  document.querySelector('.js-confirm')
+    .innerHTML = ``;
+}

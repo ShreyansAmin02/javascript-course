@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12n</title>
+</head>
+
+<body>
+  <h1>Welcome to 12n</h1>
+  <p>Create a function removeEgg(foods) that takes an array of strings
+    and returns an array where the string 'egg' is removed. Create this
+    function using .filter() instead of a loop.
+  <ul>
+    <li>removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['apple', 'ham']</li>
+  </ul>
+  </p>
+  <script>
+    // Your JavaScript code goes here
+    function removeEgg(foods) {
+      let egg = 0;
+      return foods.filter((value, index) => {
+        if (value === 'egg' && egg < 2) {
+          egg++;
+          return false;
+        } else {
+          return true;
+        };
+      })
+    };
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+  </script>
+
+</body>
+
+</html>

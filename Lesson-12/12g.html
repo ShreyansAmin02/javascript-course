@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App</title>
+</head>
+
+<body>
+  <h1>Messaging App</h1>
+  <p>Imagine we're creating a messaging app. Use setInterval() and document.title to create the feature on the right
+    (the title changes every 1 second).</p>
+  <script>
+
+    let index = 1;
+
+    // Change the title every 1 second
+    setInterval(() => {
+      document.title = `(${index}) App`;
+      index = index + 1; // Loop back to the first message
+    }, 1000);
+
+  </script>
+</body>
+
+</html>
