@@ -10,14 +10,14 @@ if (!cart) {
   }]; // default cart
 }
 
-function saveToStorage(cart) {
+function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 export function addToCart(productId) {
   let matchingItem = '';
 
-  const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`); // select the quanity from 1-10
+  const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`); // select the quantity from 1-10
   const quantity = Number(quantitySelector.value); // transfer to variable
   quantitySelector.value = 1; // reset to 1
 
@@ -35,7 +35,7 @@ export function addToCart(productId) {
       quantity
     });
   }
-  saveToStorage(cart);
+  saveToStorage();
 };
 
 export function removeFromCart(productId) {
@@ -49,5 +49,28 @@ export function removeFromCart(productId) {
 
   cart = newCart;
 
-  saveToStorage(cart);
+  saveToStorage();
+}
+
+export function calculateCartQuantity() {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity; //adds all the quanitites and saves to varaible 
+  });
+  return cartQuantity;
+}
+
+export function updateQuanity(productId, newQuantity) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.quantity = newQuantity;
+
+  saveToStorage();
 }
