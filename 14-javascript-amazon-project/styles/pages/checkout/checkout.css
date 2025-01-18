@@ -224,6 +224,7 @@
   display: initial;
 }
 
-.is-editing-quantity .js-update-link {
+.is-editing-quantity .js-update-link,
+.is-editing-quantity .quantity-label {
   display: none;
 }

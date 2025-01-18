@@ -139,17 +139,24 @@ document.querySelectorAll('.js-save-link')
       ); // look for the container that has the product
       const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
       container.classList.remove('is-editing-quantity')
-      console.log(`new quantity for ${productId} is ${quantityInput.value}`);
+
       const newQuantity = Number(quantityInput.value);
-      updateQuanity(productId, newQuantity);
-      const quantityLabel = document.querySelector(`
-        .js-quantity-label-${productId}`
-      );
+      if (newQuantity > 0 && newQuantity < 100) {
+        updateQuanity(productId, newQuantity);
+        const quantityLabel = document.querySelector(`
+          .js-quantity-label-${productId}`
+        );
 
-      quantityLabel.innerHTML = newQuantity;
+        quantityLabel.innerHTML = newQuantity;
 
-      updateCartQuanity();
-      quantityInput.value = '';
+        updateCartQuanity();
+
+        quantityInput.value = '';
+
+      } else if (newQuantity === 0 || newQuantity > 100) {
+        alert(`Please enter a valid quantity.
+Quantity must be higher than 0, and less than 100.`)
+      }
     })
   });
 
