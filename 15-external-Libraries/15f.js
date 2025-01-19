@@ -1,7 +1,7 @@
 // 15e
 
 function isWeekend(date) {
-  if (date === ('Saturday' || 'Sunday')) {
+  if (date === 'Saturday' || date === 'Sunday') {
     return true;
   }
   return false;
