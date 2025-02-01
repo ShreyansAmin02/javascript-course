@@ -14,22 +14,21 @@ import '../data/cart-class.js';
 
 async function loadPage() {
   try {
-    Promise.all([
+    // throw 'error1';
+
+    await Promise.all([
       loadProductsFetch(),
       loadCartFetch()
     ]);
-  } catch (error) {
-    console.log(`An error occurred whilst loading the products:
-${error}`);
-  }
 
-  renderCheckoutHeader();
+  } catch (error) {
+    console.log('Unexpected error. Please try again later.');
+  }
   renderOrderSummary();
   renderPaymentSummary();
-
+  renderCheckoutHeader();
 }
 loadPage();
-
 
 /*
 
