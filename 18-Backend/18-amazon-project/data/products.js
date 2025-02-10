@@ -8,6 +8,7 @@ export function getProduct(productId) {
       matchingProduct = product;
     }
   });
+  console.log(matchingProduct);
   return matchingProduct;
 }
 
@@ -17,6 +18,7 @@ class Product {
   name;
   rating;
   priceCents;
+  keywords;
 
   constructor(productDetails) {
     this.id = productDetails.id;
@@ -24,6 +26,7 @@ class Product {
     this.name = productDetails.name;
     this.rating = productDetails.rating;
     this.priceCents = productDetails.priceCents;
+    this.keywords = productDetails.keywords;
   }
 
   getStarsUrl() {

@@ -27,8 +27,11 @@ export function addToCart(productId) {
 
   // uncomment this later
   const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`); // select the quantity from 1-10
-  const quantity = Number(quantitySelector.value); // transfer to variable
-  quantitySelector.value = 1; // reset to 1
+  const quantity = quantitySelector ? Number(quantitySelector.value) : 1; // transfer to variable, default to 1 if not found
+
+  if (quantitySelector) {
+    quantitySelector.value = 1; // reset to 1 if it exists
+  }
 
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) { // check if item already exists in the cart
